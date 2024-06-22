@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Chat</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="text title">Chat</h1>
+    </header>
+    
+    <section class="section main">
+        Status: <span id="status"></span>    
+        URL: <input id="url" readonly/>
+        <input id="user" type="text" placeholder="Ingrese su nombre de usuario..." />       
+        <input id="open" type="button" value="Conectarse" />       
+        <input id="close" type="button" value="Desconectarse" />      
+        <input id="send" type="button" value="Enviar" />       
+        <input id="message" type="text" placeholder="Ingrese su mensaje..."/>
+        <textarea id="chat" class="chat" readonly></textarea>
+    </section>
+
+    <footer class="footer">
+        <p class="text footer-text">UNCO 2024 | Laboratorio de Programación Distribuida</p>
+    </footer>
+
+    <script src="client.js"></script>
+
+   </body>  
+</html>
