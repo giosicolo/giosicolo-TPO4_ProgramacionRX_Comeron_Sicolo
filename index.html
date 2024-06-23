@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Chat</title>
 </head>
@@ -13,14 +14,20 @@
     </header>
     
     <section class="section main">
-        Status: <span id="status"></span>    
-        URL: <input id="url" readonly/>
-        <input id="user" type="text" placeholder="Ingrese su nombre de usuario..." />       
-        <input id="open" type="button" value="Conectarse" />       
-        <input id="close" type="button" value="Desconectarse" />      
-        <input id="send" type="button" value="Enviar" />       
-        <input id="message" type="text" placeholder="Ingrese su mensaje..."/>
-        <textarea id="chat" class="chat" readonly></textarea>
+        <div class="chat-status">
+            Status: <span id="status"></span>    
+            URL: <input id="url" readonly/> 
+        </div><br>
+        <div class="chat-login">
+            <input id="user" type="text" placeholder="Ingrese su nombre de usuario..." />       
+            <input id="open" type="button" value="Conectarse" />       
+            <input id="close" type="button" value="Desconectarse" />       
+        </div><br>
+        <div class="chat-container">
+            <textarea id="chat" class="chat" readonly></textarea>
+            <input class="message" id="message" type="text" placeholder="Ingrese su mensaje..."/>
+            <button class="btnSend" id="send"> <i class="bi bi-send" style="color: #63E6BE;"></i>  </button>     
+        </div>
     </section>
 
     <footer class="footer">

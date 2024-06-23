@@ -13,11 +13,13 @@
 }
 
 .section {
-    position: relative;
-    width: 100vw;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 70vh; /* Ajusta la altura según tus necesidades */
+    background-color: rgb(129, 205, 255); /* Fondo de color opcional */
+    filter: brightness(0.8);
 }
 
 .header {
@@ -37,14 +39,18 @@
     text-align: center;
 }
 
-.main {
-    gap: 10px;
-    height: 500px;
-    display: flex;
-    flex-direction: row;
+.chat-status {
+    position: relative;
     justify-content: center;
-    background-color: rgb(129, 205, 255);
-    filter: brightness(0.8);
+    display: flex;
+}
+
+.chat-login {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px; 
+    margin-top: 20px;
 }
 
 .chat {
@@ -54,7 +60,20 @@
     align-items: center;   
 }
 
-textarea {
+.chat-container {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    flex-direction: column; /* Alinear elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+  }
+  
+  /*
+  textarea {
     width: 50%;
     height: 300px;
     padding: 12px 12px;
@@ -63,7 +82,65 @@ textarea {
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+} */
+
+  textarea {
+    width: 50%;
+    height: 300px;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .textarea:focus {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 132, 255, 0.5);
+  }
+  
+  .textarea::placeholder {
+    color: #999;
+  }
+
+  .message {
+    max-width: 100%;
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .message:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+ 
+
+  .btnSend {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #04AA6D;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
+
+  .btnSend:hover {
+    background-color: #04AA6D;
+    color: white;
+  } 
+
+  .btnSend:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
 .footer {
     background-color: darkslategrey;
@@ -90,3 +167,4 @@ textarea {
     align-items: center;
     justify-content: space-between;
 }
+
