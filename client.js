@@ -7,11 +7,13 @@ window.addEventListener("load", function(event) {
     var close = document.getElementById("close");              
     var send = document.getElementById("send");              
     var message = document.getElementById("message"); 
-    var chat = document.getElementById("chat");             
+    var chat = document.getElementById("chat");
+    var nameUser = document.getElementById('name-user');             
     var socket;                 
     status.textContent = "Offline";
     status.style.color = "red";               
     url.value = "ws://localhost:8080"; 
+    var nameUserEmpity= nameUser.innerHTML;
 
     close.disabled = true;              
     send.disabled = true;
@@ -22,6 +24,7 @@ window.addEventListener("load", function(event) {
         if (user.value) {              
             open.disabled = true;              
             socket = new WebSocket(url.value + "/" + user.value, "echo-protocol");
+            
 
             socket.addEventListener("open", function(event) {
                 user.disabled = true;                  
@@ -29,7 +32,8 @@ window.addEventListener("load", function(event) {
                 message.disabled = false;                
                 send.disabled = false;                  
                 status.textContent = "Online"; 
-                status.style.color = "green";             
+                status.style.color = "green";
+                nameUser.innerHTML +=  "  "  + user.value.trim();             
             });                 
 
             // Mostrar mensajes recibidos desde el servidor             
@@ -60,12 +64,21 @@ window.addEventListener("load", function(event) {
     close.addEventListener("click", function(event) {              
         close.disabled = true;              
         send.disabled = true;
+        nameUser.innerHTML = nameUserEmpity;  
         user.disabled = false;              
         message.disabled = true;
         chat.textContent = "";  
-        message.value = "";              
+        message.value = "";            
         socket.close();          
     });             
+
+
+    message.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') { // 13 es el código de la tecla Enter
+            event.preventDefault(); // Evita que se realice la acción por defecto del Enter
+            send.click(); // Simula el clic en el botón de enviar
+        }
+    });
 
     // Enviar el mensaje al servidor cuando se hace click en el boton 'Enviar'
     send.addEventListener("click", function(event) {

@@ -10,28 +10,30 @@
 
 <body>
     <header class="header">
-        <h1 class="text title">Chat</h1>
+        <h1 class="text title">FAI-Chat</h1>
+        <img class="logo-title" src="img/fai.png" alt="logo fai">
     </header>
     
     <section class="section main">
         <div class="chat-status">
-            Status: <span id="status"></span>    
-            URL: <input id="url" readonly/> 
-        </div><br>
+            <p>Status:</p><p class="status" id="status"></p> 
+            <p>URL:</p><input class="text-user" id="url" readonly/> 
+        </div>
         <div class="chat-login">
-            <input id="user" type="text" placeholder="Ingrese su nombre de usuario..." />       
-            <input id="open" type="button" value="Conectarse" />       
-            <input id="close" type="button" value="Desconectarse" />       
-        </div><br>
+            <input  class="text-user" id="user" type="text" placeholder="Ingrese su nombre de usuario..." />   
+            <button class="btn-open" id="open">Conectarse   <i class="bi bi-box-arrow-in-right" style="color: #63E6BE;"></i></button>           
+            <button class="btn-close" id="close">Desconectarse  <i class="bi bi-box-arrow-in-left" style="color: #FA8072;"></i></button>        
+        </div>
         <div class="chat-container">
             <textarea id="chat" class="chat" readonly></textarea>
             <input class="message" id="message" type="text" placeholder="Ingrese su mensaje..."/>
-            <button class="btnSend" id="send"> <i class="bi bi-send" style="color: #63E6BE;"></i>  </button>     
+            <button class="btnSend" id="send"> <i class="bi bi-send" style="color: #63E6BE;"></i></button>   
+            <p class="text" id="name-user"> <i class="bi bi-person-circle"></i> Usuario: </p>
         </div>
     </section>
 
     <footer class="footer">
-        <p class="text footer-text">UNCO 2024 | Laboratorio de Programación Distribuida</p>
+        <p class="text footer-text">UNCO 2024 | Laboratorio de Programación Distribuida<br><br>Diseñado por Comeron Nicolas y Sicolo Giovanni<br><br>Profesor a cargo: Zanellato Claudio<br></p>
     </footer>
 
     <script src="client.js"></script>

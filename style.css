@@ -15,10 +15,10 @@
 .section {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    height: 70vh; /* Ajusta la altura según tus necesidades */
-    background-color: rgb(129, 205, 255); /* Fondo de color opcional */
+    justify-content: center; 
+    align-items: center; 
+    height: 70vh;
+    background-color: rgb(129, 205, 255); 
     filter: brightness(0.8);
 }
 
@@ -26,7 +26,8 @@
     height: 100px;
     display: flex;
     justify-content: center;
-    background-color: rgb(87, 209, 128);
+    align-items: center; 
+    background-color:#416780;
 }
 
 .text {
@@ -35,14 +36,24 @@
 
 .title {
     font-size: 40px;
-    color: black;
+    color: white;
     text-align: center;
+}
+
+.logo-title {
+  margin-left: 10px;
+  height: 50px;
 }
 
 .chat-status {
     position: relative;
     justify-content: center;
     display: flex;
+    align-items: center; /* Centrar elementos horizontalmente */
+}
+
+.status {
+  margin-right: 10px;
 }
 
 .chat-login {
@@ -67,26 +78,14 @@
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     width: 90%;
-    max-width: 500px;
+    max-width: 320px;
     flex-direction: column; /* Alinear elementos verticalmente */
     align-items: center; /* Centrar elementos horizontalmente */
   }
   
-  /*
   textarea {
-    width: 50%;
-    height: 300px;
-    padding: 12px 12px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-} */
-
-  textarea {
-    width: 50%;
-    height: 300px;
+    width: 100% !important;
+    height: 300px !important;
     border: none;
     border-radius: 20px;
     padding: 12px 12px;
@@ -95,8 +94,6 @@
     outline: none;
     font-size: 16px;
     background-color: #fff;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
   }
 
   .textarea:focus {
@@ -111,60 +108,114 @@
     max-width: 100%;
     width: 250px;
     padding: 10px 20px;
-    border-radius: 20px;
-    margin-bottom: 10px;
+    border-radius: 10px;
     position: relative;
-    line-height: 1.4;
+  }
+ 
+  .message:focus{ 
+    box-shadow: 2px 2px 5px #04AA6D;
   }
 
   .message:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
- 
 
-  .btnSend {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #04AA6D;
-    border-radius: 50%;
-    width: 40px;
+  .text-user{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 220px;
     height: 40px;
-}
-
-  .btnSend:hover {
-    background-color: #04AA6D;
-    color: white;
-  } 
-
-  .btnSend:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+    max-width: 250px;
+    font-size: 1em;
   }
 
+  .text-user:focus{
+    box-shadow: 2px 2px 5px #04AA6D;  
+  }
+ 
+
+
+.btn-open {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #04AA6D;
+  border-radius: 5%;
+  font-size: 1.2em; 
+}
+
+.btn-open:hover {
+  background-color: #04AA6D;
+  color: white;
+} 
+
+.btn-open:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-close {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #CB4335;
+  border-radius: 5%;
+  font-size: 1.2em; 
+}
+
+.btn-close:hover {
+  background-color: #CB4335;
+  color: white;
+} 
+
+.btn-close:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnSend {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #04AA6D;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.btnSend:hover {
+  background-color: #04AA6D;
+  color: white;
+} 
+
+.btnSend:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
 .footer {
-    background-color: darkslategrey;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #15222A;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .footer-text {
-    color: white;
-    font-size: 17px;
-    flex-basis: 0;
-    flex-grow: 1;
-    text-align: center;
+  color: white;
+  font-size: 17px;
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .footer-content {
-    max-width: 1100px;
-    height: 100%;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1100px;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
