@@ -13,7 +13,7 @@ window.addEventListener("load", function(event) {
     status.textContent = "Offline";
     status.style.color = "red";               
     url.value = "ws://localhost:8080"; 
-    var nameUserEmpity= nameUser.innerHTML;
+    var nameUserEmpty= nameUser.innerHTML;
 
     close.disabled = true;              
     send.disabled = true;
@@ -25,7 +25,6 @@ window.addEventListener("load", function(event) {
             open.disabled = true;              
             socket = new WebSocket(url.value + "/" + user.value, "echo-protocol");
             
-
             socket.addEventListener("open", function(event) {
                 user.disabled = true;                  
                 close.disabled = false;  
@@ -64,14 +63,13 @@ window.addEventListener("load", function(event) {
     close.addEventListener("click", function(event) {              
         close.disabled = true;              
         send.disabled = true;
-        nameUser.innerHTML = nameUserEmpity;  
+        nameUser.innerHTML = nameUserEmpty;  
         user.disabled = false;              
         message.disabled = true;
         chat.textContent = "";  
         message.value = "";            
         socket.close();          
     });             
-
 
     message.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') { // 13 es el código de la tecla Enter
@@ -89,5 +87,3 @@ window.addEventListener("load", function(event) {
         }         
     });      
 }); 
-
-

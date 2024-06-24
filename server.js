@@ -12,7 +12,6 @@ wsServer = new WebSocketServer({
 
 const PORT = process.env.PORT || 8080;
 
-
 // Inicia el servidor
 server.listen(PORT, () => {
   console.log(`El servidor se encuentra en línea en http://localhost:${PORT}`);
@@ -41,7 +40,7 @@ wsServer.on('request', function(request) {
     clients.add(connection);
     
     for (let client of clients) {
-        client.sendUTF(currentUser +" ingresó a la sala.");
+        client.sendUTF(getCurrentTime() + currentUser +" ingresó a la sala.");
     }
 
     console.log((new Date()) + ': Conexión de ' + request.origin + ' aceptada.');  
@@ -49,7 +48,7 @@ wsServer.on('request', function(request) {
     connection.on('message', function(message) {                 
 	    console.log('Mensaje Recibido: ' + message.utf8Data);
         for (let client of clients) {
-            client.sendUTF(currentUser + ": " + message.utf8Data);
+            client.sendUTF(getCurrentTime() + currentUser + ": " + message.utf8Data);
         }
     });         
 
@@ -57,8 +56,14 @@ wsServer.on('request', function(request) {
 	    console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' desconectado.');
     
         for (let client of clients) {
-            client.sendUTF(currentUser + " se desconectó de la sala.");
+            client.sendUTF(getCurrentTime() + currentUser + " se desconectó de la sala.");
         }
         clients.delete(connection);  
     });  
 });
+
+function getCurrentTime() {
+    let currentDate = new Date();
+    let sendTime = currentDate.getHours() + ":" + (currentDate.getMinutes() < 10 ? '0' : '') + currentDate.getMinutes() + " ";
+    return sendTime;
+}
